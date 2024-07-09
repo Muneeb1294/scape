@@ -34,23 +34,33 @@
 
   <script>
     // The value below is injected by flutter build, do not touch.
-    const serviceWorkerVersion = "1374968026";
+    const serviceWorkerVersion = "2189214139";
     window.flutterWebRenderer = "html";
   </script>
+  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB29porDD7WzOKOmT0QtkK-R_TpcBaZqyo&libraries=geometry"></script> -->
+  
   <!-- This script adds the flutter initialization JS code -->
-  <script src="flutter.js" defer></script>
+  <script src="/main.dart.js" defer></script>
 
 </head>
 <body>
+  <!-- <script src="flutter_bootstrap.js" async></script> -->
   <script>
+     if ('serviceWorker' in navigator) {
+      window.addEventListener('flutter-first-frame', function () {
+        navigator.serviceWorker.register('flutter_service_worker.js?v=1417913520');
+        navigator.serviceWorker.register('flutter_service_worker.js?v=2189214139');
+      });
+    }
     window.addEventListener('load', function(ev) {
       // Download main.dart.js
+      entrypointUrl: "/main.dart.js",
       _flutter.loader.loadEntrypoint({
         serviceWorker: {
           serviceWorkerVersion: serviceWorkerVersion,
         },
-        onEntrypointLoaded: function(engineInitializer) {
-          engineInitializer.initializeEngine().then(function(appRunner) {
+        onEntrypointLoaded: function (engineInitializer) {
+          engineInitializer.initializeEngine().then(function (appRunner) {
             appRunner.runApp();
           });
         }
