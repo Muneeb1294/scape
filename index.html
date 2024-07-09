@@ -37,18 +37,15 @@
     const serviceWorkerVersion = "1374968026";
     window.flutterWebRenderer = "html";
   </script>
-  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB29porDD7WzOKOmT0QtkK-R_TpcBaZqyo&libraries=geometry"></script> -->
-  
   <!-- This script adds the flutter initialization JS code -->
   <script src="flutter.js" defer></script>
 
 </head>
 <body>
-  <!-- <script src="flutter_bootstrap.js" async></script> -->
   <script>
     window.addEventListener('load', function(ev) {
       // Download main.dart.js
-      FlutterLoader.load({
+      _flutter.loader.loadEntrypoint({
         serviceWorker: {
           serviceWorkerVersion: serviceWorkerVersion,
         },
