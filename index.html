@@ -34,7 +34,7 @@
 
   <script>
     // The value below is injected by flutter build, do not touch.
-    const serviceWorkerVersion = "2300048833";
+    const serviceWorkerVersion = "1374968026";
     window.flutterWebRenderer = "html";
   </script>
   <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB29porDD7WzOKOmT0QtkK-R_TpcBaZqyo&libraries=geometry"></script> -->
@@ -48,7 +48,7 @@
   <script>
     window.addEventListener('load', function(ev) {
       // Download main.dart.js
-      _flutter.loader.loadEntrypoint({
+      FlutterLoader.load({
         serviceWorker: {
           serviceWorkerVersion: serviceWorkerVersion,
         },
